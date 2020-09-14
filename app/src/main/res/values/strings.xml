@@ -11,4 +11,5 @@
     <string name="textview">TextView</string>
     <string name="edit">EDIT</string>
     <string name="delete">DELETE</string>
+    <string name="new_todos">New Todos</string>
 </resources>

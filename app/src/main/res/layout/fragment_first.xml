@@ -24,13 +24,47 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewContainer"
+            android:layout_width="372dp"
+            android:layout_height="408dp"
             android:scrollbars="vertical"
-            android:layout_width="280dp"
-            android:layout_height="460dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Judul" />
+            app:layout_constraintTop_toBottomOf="@+id/Judul"
+            app:layout_constraintVertical_bias="0.255" />
+
+        <EditText
+            android:id="@+id/newTodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:ems="10"
+            android:fontFamily="serif"
+            android:inputType="textPersonName"
+            android:text="Name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonAdd"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewContainer"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:background="#26C6DA"
+            android:fontFamily="serif"
+            android:text="ADD"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/newTodo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newTodo"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
