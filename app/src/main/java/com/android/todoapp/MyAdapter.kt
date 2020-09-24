@@ -7,21 +7,24 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.android.todoapp.databinding.ListItemBinding
 
 class MyAdapter(private val myDataset: MutableList<String>) :
     RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
     private lateinit var alertDialog: AlertDialog.Builder
+    private lateinit var dataBinding: ListItemBinding
 
-    class MyViewHolder(textView: TextView) : RecyclerView.ViewHolder(textView) {
-        val todoText: TextView = itemView.findViewById(R.id.listItem)
-        val deleteButton: Button = itemView.findViewById(R.id.buttonDelete)
-        val editButton: Button = itemView.findViewById(R.id.buttonEdit)
+    class MyViewHolder(dataBinding: ListItemBinding) : RecyclerView.ViewHolder(dataBinding.root) {
+        dataBinding.apply {
+            val todoText: TextView = itemView.findViewById(R.id.listItem)
+            val deleteButton: Button = itemView.findViewById(R.id.buttonDelete)
+            val editButton: Button = itemView.findViewById(R.id.buttonEdit)
+        }
     }
 
     override fun onCreateViewHolder (parent: ViewGroup, viewType: Int): MyViewHolder {
-        val textView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item, parent, false) as TextView
-        return MyViewHolder(textView)
+        dataBinding = ListItemBinding.inflate(LayoutInflater.from(parent.context))
+        return MyViewHolder(dataBinding)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
